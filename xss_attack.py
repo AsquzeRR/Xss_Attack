@@ -52,7 +52,7 @@ while True:
         # get all the forms from the URL
         forms = get_all_forms(url)
         print(f"[+] Detected {len(forms)} forms on {url}.")
-        js_script = "<Script>alert('Welcome to my hell ^_^')</scripT>"
+        js_script = "<Script>alert('Do you have the xss vulnerability?')</script>"
         # returning value
         is_vulnerable = False
         # iterate over all forms
@@ -64,8 +64,6 @@ while True:
                 print(f"[*] Form details:")
                 pprint(form_details)
                 is_vulnerable = True
-            else:
-                print("The site is protected against the XSS vulnerability")
                 # won't break because we want to print other available vulnerable forms
         return is_vulnerable
     if __name__ == "__main__":
